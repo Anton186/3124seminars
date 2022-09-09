@@ -1,9 +1,4 @@
-﻿// Задача 24: Напишите программу, которая принимает на вход число (А) и выдаёт сумму чисел 
-// от 1 до А.
-// 7 -> 28
-// 4 -> 10
-// 8 -> 36
-
+﻿
 
 int ReadNumber(string message)
 {
@@ -11,14 +6,14 @@ int ReadNumber(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-int SumNumbersFrom1ToA(int a)
+int ProdNumbersFrom1ToA(int a)
 {
     if (a >= 1) //если А больше либо равно 1, то работаем дальше
     {
-        int sum = 0;
-        for (int i = 1; i <= a; i++)
+        int sum = 1;
+        for (int i = 2; i <= a; i++)
         {
-            sum = sum + i; //копим сумму
+            sum = sum * i; //копим произведение
             //sum += i; //альтернативный вариант записи команды выше
         }
         return sum; //вернем накопившуюся сумму
@@ -31,8 +26,5 @@ int SumNumbersFrom1ToA(int a)
 }
 
 int number = ReadNumber("Введите число :");
-int sum = SumNumbersFrom1ToA(number);
-Console.WriteLine($"Сумма элементов от 1 до A = {sum}");
-
-
-
+int sum = ProdNumbersFrom1ToA(number);
+Console.WriteLine($"Произведение элементов от 1 до A = {sum}");

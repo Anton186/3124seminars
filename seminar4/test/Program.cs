@@ -1,17 +1,10 @@
-﻿Console.Clear();
-Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-int x = 0;
-if (number > 1)
+﻿int[] array = new int[8]; //создали массив на 8 элементов
+
+Random rand = new Random();
+for(int i = 0; i < array.Length; i++)
 {
-    for (int i = 1; number > 0; i++)
-    {
-        number = number / 10;
-        x++;
-    }
-    Console.Write($"Количество цифр в числе состовляет {x}");
+    array[i] = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine(array[i]);
 }
-else
-{
-    Console.Write("Вы ввели некорректное число.");
-}
+
+
