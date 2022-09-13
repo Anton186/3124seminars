@@ -1,10 +1,12 @@
-﻿int[] array = new int[8]; //создали массив на 8 элементов
-
-Random rand = new Random();
-for(int i = 0; i < array.Length; i++)
+﻿int M = int.Parse(Console.ReadLine());
+int count = 0;
+for (int i = 0; i < M; i++ )
 {
-    array[i] = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine(array[i]);
+    Console.WriteLine("Ввведите число ");
+    int n = int.Parse(Console.ReadLine());
+    if ( n > 0)
+    {
+        count ++;
+    }
 }
-
-
+Console.WriteLine($"{count} раз пользователь ввел числа больше нуля");

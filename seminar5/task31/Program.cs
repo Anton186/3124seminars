@@ -15,36 +15,56 @@ int[] GetArray(int size, int leftRange, int rightRange)
     return arr;
 }
 
-int SumPositiveElements(int[] arr)
+// int SumPositiveElements(int[] arr)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         if(arr[i] > 0) //если элемент положительный
+//         {
+//             sum = sum + arr[i]; //копим сумму положительных элементов
+//             //sum += arr[i]
+//         }
+//     }
+//     return sum;
+// }
+
+// int SumNegativeElements(int[] arr)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         if(arr[i] < 0) //если элемент отрицательный
+//         {
+//             sum = sum + arr[i]; //копим сумму отрицательных элементов
+//             //sum += arr[i]
+//         }
+//     }
+//     return sum;
+// }
+
+(int, int) GetPositiveAndNegativeSums(int[] arr)
 {
-    int sum = 0;
-    for (int i = 0; i < arr.Length; i++)
+    int sumP = 0;
+    int sumN = 0;
+
+    for(int i = 0; i < arr.Length; i++)
     {
-        if(arr[i] > 0) //если элемент положительный
+        if (arr[i] > 0)
         {
-            sum = sum + arr[i]; //копим сумму положительных элементов
-            //sum += arr[i]
+            sumP += arr[i];
+        }
+        else
+        {
+            sumN += arr[i];
         }
     }
-    return sum;
+    return (sumP, sumN);
 }
 
-int SumNegativeElements(int[] arr)
-{
-    int sum = 0;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if(arr[i] < 0) //если элемент отрицательный
-        {
-            sum = sum + arr[i]; //копим сумму отрицательных элементов
-            //sum += arr[i]
-        }
-    }
-    return sum;
-}
- 
 int[] array = GetArray(12, -9, 9);
 Console.WriteLine(string.Join(", ", array));
-int sumPositive = SumPositiveElements(array);
-int sumNegative = SumNegativeElements(array);
+// int sumPositive = SumPositiveElements(array);
+// int sumNegative = SumNegativeElements(array);
+(int sumPositive, int sumNegative) = GetPositiveAndNegativeSums(array);
 Console.WriteLine($"Сумма положительных элементов = {sumPositive}, отрицательных элементов = {sumNegative}");
