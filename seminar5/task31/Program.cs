@@ -4,7 +4,7 @@
 // Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6] сумма 
 // положительных чисел равна 29, сумма отрицательных равна -20.
 
-int[] GetArray(int size, int leftRange, int rightRange)
+int[] GetArray(int size, int rightRange, int leftRange)
 {
     int[] arr = new int[size];
     Random rand = new Random();
@@ -43,7 +43,7 @@ int[] GetArray(int size, int leftRange, int rightRange)
 //     return sum;
 // }
 
-(int, int) GetPositiveAndNegativeSums(int[] arr)
+(int, string) GetPositiveAndNegativeSums(int[] arr)
 {
     int sumP = 0;
     int sumN = 0;
@@ -59,7 +59,7 @@ int[] GetArray(int size, int leftRange, int rightRange)
             sumN += arr[i];
         }
     }
-    return (sumP, sumN);
+    return (sumP, "123");
 }
 
 int[] array = GetArray(12, -9, 9);
