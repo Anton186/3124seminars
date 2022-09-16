@@ -4,7 +4,7 @@
 // Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6] сумма 
 // положительных чисел равна 29, сумма отрицательных равна -20.
 
-int[] GetArray(int size, int rightRange, int leftRange)
+int[] GetArray(int size,int leftRange,  int rightRange)
 {
     int[] arr = new int[size];
     Random rand = new Random();
@@ -43,7 +43,7 @@ int[] GetArray(int size, int rightRange, int leftRange)
 //     return sum;
 // }
 
-(int, string) GetPositiveAndNegativeSums(int[] arr)
+(int, int) GetPositiveAndNegativeSums(int[] arr)
 {
     int sumP = 0;
     int sumN = 0;
@@ -59,10 +59,12 @@ int[] GetArray(int size, int rightRange, int leftRange)
             sumN += arr[i];
         }
     }
-    return (sumP, "123");
+    return (sumP, sumN);
 }
 
-int[] array = GetArray(12, -9, 9);
+Random rand = new Random();
+int randomSize = rand.Next(5, 10);
+int[] array = GetArray(randomSize, 100, 999);
 Console.WriteLine(string.Join(", ", array));
 // int sumPositive = SumPositiveElements(array);
 // int sumNegative = SumNegativeElements(array);
